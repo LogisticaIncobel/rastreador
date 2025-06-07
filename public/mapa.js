@@ -4,7 +4,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-fetch('https://<seu-usuario>.github.io/rastreador/api/localizacoes')  // Substitua pelo seu link real
+fetch('https://LogisticaIncobel.github.io/rastreador/api/localizacoes')  // URL da sua API no GitHub Pages
     .then(response => response.json())
     .then(data => {
         data.forEach(caminhao => {
