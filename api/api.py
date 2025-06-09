@@ -19,19 +19,21 @@ def coletar_dados():
         print("Erro ao autenticar na Sascar.")
         return
 
-    localizacoes = []
-
-    # Simulado - substituir com scraping real
-    localizacoes.extend([
-        {"placa": "RLO3J98", "latitude": -23.5505, "longitude": -46.6333,
-         "data": "2025-06-09", "hora": "12:00", "velocidade": "60km/h", "ignicao": "ligada"},
-        {"placa": "RYN0I35", "latitude": -23.5510, "longitude": -46.6350,
-         "data": "2025-06-09", "hora": "12:02", "velocidade": "52km/h", "ignicao": "ligada"},
-    ])
+    localizacoes = [
+        {
+            "placa": "RLO3J98",
+            "latitude": -23.5505,
+            "longitude": -46.6333,
+            "data": "2025-06-09",
+            "hora": "12:00",
+            "velocidade": "60km/h",
+            "ignicao": "ligada"
+        }
+    ]
 
     os.makedirs("public", exist_ok=True)
     with open("public/localizacoes.json", "w", encoding="utf-8") as f:
-        json.dump(localizacoes, f, ensure_ascii=False, indent=4)
+        json.dump(localizacoes, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
     coletar_dados()
